@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @shop %>
+
+<h1>Items</h1>
+
+<div id="items">
+  <% @items.each do |item| %>
+    <%= render item %>
+    <p>
+      <%= link_to "Show this item", item %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New item", "#{new_item_path}?shop_id=#{@shop.id}" %>
+
+<div>
+  <%= link_to "Edit this shop", edit_shop_path(@shop) %> |
+  <%= link_to "Back to shops", shops_path %>
+
+  <%= button_to "Destroy this shop", @shop, method: :delete %>
+</div>
